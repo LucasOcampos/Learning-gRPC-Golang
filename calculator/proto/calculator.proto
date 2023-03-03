@@ -4,15 +4,8 @@ package calculator;
 
 option go_package = "gRPC-Golang/calculator/proto";
 
-message CalculatorRequest {
-  uint32 number1 = 1;
-  uint32 number2 = 2;
-}
+import "sum.proto";
 
-message CalculatorResponse {
-  uint32 result = 1;
-}
-
-service CalculatorService {
-  rpc Calculator (CalculatorRequest) returns (CalculatorResponse);
+service SumService {
+  rpc Sum(SumRequest) returns (SumResponse);
 }

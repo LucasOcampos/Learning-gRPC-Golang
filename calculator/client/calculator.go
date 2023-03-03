@@ -6,10 +6,10 @@ import (
 	"log"
 )
 
-func calculate(client pb.CalculatorServiceClient) {
-	log.Println("calculate was invoked")
+func calculateSum(client pb.SumServiceClient) {
+	log.Println("calculateSum was invoked")
 
-	response, err := client.Calculator(context.Background(), &pb.CalculatorRequest{
+	response, err := client.Sum(context.Background(), &pb.SumRequest{
 		Number1: 10,
 		Number2: 3,
 	})
@@ -17,5 +17,5 @@ func calculate(client pb.CalculatorServiceClient) {
 		log.Fatalf("Could not calculate: %v", err)
 	}
 
-	log.Printf("Calculated: %v", response.Result)
+	log.Printf("Calculated Sum: %v", response.Result)
 }

@@ -10,7 +10,7 @@ import (
 const address = "0.0.0.0:50051"
 
 type Server struct {
-	pb.CalculatorServiceServer
+	pb.SumServiceServer
 }
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	log.Printf("Listening on %s\n", address)
 
 	server := grpc.NewServer()
-	pb.RegisterCalculatorServiceServer(server, &Server{})
+	pb.RegisterSumServiceServer(server, &Server{})
 
 	if err = server.Serve(listener); err != nil {
 		log.Fatalf("Failed to serve: %v\n", err)

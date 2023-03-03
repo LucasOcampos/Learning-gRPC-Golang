@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func (server *Server) Calculator(ctx context.Context, in *pb.CalculatorRequest) (*pb.CalculatorResponse, error) {
-	log.Printf("Calculator function was invoked with %v\n", in)
-	return &pb.CalculatorResponse{Result: in.Number1 + in.Number2}, nil
+func (server *Server) Sum(ctx context.Context, in *pb.SumRequest) (*pb.SumResponse, error) {
+	log.Printf("Sum function was invoked with %v\n", in)
+	return &pb.SumResponse{Result: in.Number1 + in.Number2}, nil
 }

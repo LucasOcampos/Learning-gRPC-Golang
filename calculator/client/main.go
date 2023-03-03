@@ -16,7 +16,7 @@ func main() {
 	}
 	defer connection.Close()
 
-	client := pb.NewCalculatorServiceClient(connection)
+	sumClient := pb.NewSumServiceClient(connection)
 
-	calculate(client)
+	calculateSum(sumClient)
 }
