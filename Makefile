@@ -37,13 +37,14 @@ else
 endif
 
 .DEFAULT_GOAL := help
-.PHONY: greet blog calculator help
-project := greet calculator blog
+.PHONY: greet blog calculator help primes
+project := greet calculator primes blog
 
 all: $(project) ## Generate Pbs and build
 
 greet: $@ ## Generate Pbs and build for greet
 calculator: $@ ## Generate Pbs and build for calculator
+primes: $@ ## Generate Pbs and build for calculator
 blog: $@ ## Generate Pbs and build for blog
 
 $(project):
@@ -67,6 +68,9 @@ clean_greet: ## Clean generated files for greet
 
 clean_calculator: ## Clean generated files for calculator
 	${RM_F_CMD} calculator/${PROTO_DIR}/*.pb.go
+
+clean_primes: ## Clean generated files for primes
+	${RM_F_CMD} primes/${PROTO_DIR}/*.pb.go
 
 clean_blog: ## Clean generated files for blog
 	${RM_F_CMD} blog/${PROTO_DIR}/*.pb.go
